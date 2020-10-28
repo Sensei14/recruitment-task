@@ -1,0 +1,94 @@
+.discography {
+  margin-top: 3rem;
+  padding-top: 60px;
+  background-image: url("../img/discography/discography-background.png");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  padding-bottom: 350px;
+
+  h1 {
+    text-align: center;
+
+    span {
+      position: relative;
+
+      color: #000;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: url("../img/discography/discography-text-background.png");
+      background-position: 0 80%;
+      background-repeat: no-repeat;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -25%;
+        width: 150%;
+        height: 2px;
+        background-color: #000;
+        z-index: -1;
+      }
+    }
+  }
+
+  .album {
+    width: 65%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Open-sans", sans-serif;
+
+    &__section {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 1rem;
+
+      &--title {
+        width: 40%;
+        padding-top: 50px;
+      }
+
+      &--desc {
+        width: 60%;
+      }
+    }
+
+    &__year {
+      border-bottom: 2px #7f7f7f solid;
+      padding-bottom: 8px;
+      margin-bottom: 4px;
+      color: $gray-text;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    &__long-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      min-height: 50px;
+    }
+
+    &__description {
+      color: #acacac;
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+      min-height: 120px;
+    }
+
+    &__play {
+      height: 55px;
+      width: 195px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  }
+}

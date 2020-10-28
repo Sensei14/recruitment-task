@@ -1,0 +1,61 @@
+.new-tracks {
+    margin-top: 3rem;
+    padding-top: 60px;
+
+    &__list {
+        display: grid;
+        grid-template-columns: 380px 380px 380px;
+        grid-template-rows: 420px 420px 420px;
+        grid-gap: 30px;
+        justify-content: center;
+
+        font-family: "Open-sans", sans-serif;
+
+        .track {
+            padding: 2rem;
+            border: 1px black solid;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+
+            &__date {
+                border-bottom: 2px #000 solid;
+                padding-bottom: 8px;
+                margin-bottom: 4px;
+                color: $gray-text;
+                width: 100%;
+                display: block;
+                font-weight: 600;
+            }
+
+            &__album {
+                text-transform: uppercase;
+                font-weight: 600;
+                color: #fff;
+            }
+
+            &__title {
+                font-size: 1.5rem;
+                margin: 2rem 0;
+                min-height: 50px;
+                font-weight: 400;
+            }
+
+            &__description {
+                color: #acacac;
+                font-size: 0.9rem;
+                line-height: 1.4rem;
+                max-height: 65px;
+                overflow: hidden;
+            }
+
+            &__number {
+                position: absolute;
+                bottom: -50px;
+                right: 0;
+                font-size: 5rem;
+            }
+        }
+    }
+}
