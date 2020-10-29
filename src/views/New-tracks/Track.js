@@ -1,8 +1,13 @@
 import React from "react";
 
 const Track = ({ data: { album, date, title, description, id, img } }) => {
+    const trackBg = require(`../../assets/img/new-tracks/${img}`);
+
     return (
-        <div className='track'>
+        <div
+            className='track'
+            style={{ backgroundImage: `url(${trackBg.default})` }}
+        >
             <div>
                 <span className='track__date'> {date}</span>
                 <span className='track__album'>{album}</span>

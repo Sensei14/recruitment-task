@@ -1,62 +1,144 @@
 .header {
-  width: 100%;
-  background-color: rgba(0, 8, 12, 0.1);
-  height: 60px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-
-  .main-nav {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    background-color: rgba(0, 8, 12, 0.1);
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 
-    &__links {
-      list-style: none;
-      display: flex;
-
-      font-family: "Dosis", sans-serif;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-
-      li {
-        margin: 0 1.5rem;
+    .main-nav {
         position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
 
-        a {
-          color: $gray-text;
-          cursor: pointer;
+        &__links {
+            list-style: none;
+            display: flex;
 
-          .link-underline {
-            position: absolute;
-            top: 125%;
-            left: -5%;
-            width: 0%;
-            height: 2px;
-            background-color: #000;
-            transition: 0.3s;
-          }
+            font-family: "Dosis", sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
 
-          &:hover {
-            color: #000;
+            li {
+                margin: 0 1.5rem;
+                position: relative;
 
-            .link-underline {
-              width: 110%;
+                a {
+                    color: $gray-text;
+                    cursor: pointer;
+
+                    .link-underline {
+                        position: absolute;
+                        top: 125%;
+                        left: -5%;
+                        width: 0%;
+                        height: 2px;
+                        background-color: #000;
+                        transition: 0.3s;
+                    }
+
+                    &:hover {
+                        color: #000;
+
+                        .link-underline {
+                            width: 110%;
+                        }
+                    }
+
+                    &.active {
+                        color: #000;
+
+                        .link-underline {
+                            width: 110%;
+                        }
+                    }
+                }
             }
-          }
-
-          &.active {
-            color: #000;
-
-            .link-underline {
-              width: 110%;
-            }
-          }
         }
-      }
     }
-  }
+
+    .main-navigation__menu-btn {
+        width: 3rem;
+        height: 3rem;
+        background: transparent;
+        border: none;
+        display: flex;
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-right: 2rem;
+        cursor: pointer;
+        position: fixed;
+        left: 1rem;
+    }
+
+    .main-navigation__menu-btn span {
+        display: block;
+        width: 3rem;
+        height: 4px;
+        background: #555;
+    }
+
+    .side-drawer {
+        min-height: 100vh;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 300px;
+        background-color: rgba(204, 204, 204, 0.856);
+        z-index: 12;
+
+        .main-nav__links {
+            flex-direction: column;
+            margin-top: 4rem;
+
+            li {
+                margin: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        background-color: transparent;
+
+        .main-navigation__menu-btn {
+            display: flex;
+        }
+
+        .main-nav__header {
+            display: none;
+        }
+
+        .main-nav__links {
+            .link-underline {
+                display: block;
+                width: 50%;
+            }
+
+            li {
+                a {
+                    &.active {
+                        color: #fff;
+
+                        .link-underline {
+                            width: 70%;
+                        }
+                    }
+
+                    &:hover {
+                        .link-underline {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

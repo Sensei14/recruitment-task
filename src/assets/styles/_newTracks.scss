@@ -5,15 +5,15 @@
     &__list {
         display: grid;
         grid-template-columns: 380px 380px 380px;
-        grid-template-rows: 420px 420px 420px;
+        grid-template-rows: 420px 420px;
         grid-gap: 30px;
         justify-content: center;
+        margin-bottom: 3rem;
 
         font-family: "Open-sans", sans-serif;
 
         .track {
             padding: 2rem;
-            border: 1px black solid;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -52,10 +52,40 @@
 
             &__number {
                 position: absolute;
-                bottom: -50px;
-                right: 0;
+                bottom: -3rem;
+                right: 1rem;
                 font-size: 5rem;
+                color: #000;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0.17),
+                    rgba(0, 0, 0, 0.17)
+                );
             }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .new-tracks {
+        margin-top: 0;
+        padding-top: 0;
+        &__list {
+            grid-template-columns: 380px 380px;
+            grid-template-rows: 420px 420px 420px;
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .new-tracks {
+        margin-top: 0;
+        padding-top: 0;
+        &__list {
+            grid-template-columns: 380px;
+            grid-template-rows: repeat(420px);
         }
     }
 }
